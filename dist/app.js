@@ -1,7 +1,9 @@
+"use strict";
 const compteur = document.querySelector("#compteur");
+const span = compteur === null || compteur === void 0 ? void 0 : compteur.querySelector("span");
 let i = 0;
 const increment = (e) => [
     i++,
-    compteur.querySelector("span").innerText = i.toString()
+    span ? span.innerText = i.toString() : null
 ];
-compteur.addEventListener("click", increment);
+compteur === null || compteur === void 0 ? void 0 : compteur.addEventListener("click", increment);

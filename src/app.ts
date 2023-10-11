@@ -1,10 +1,12 @@
 const compteur = document.querySelector("#compteur")
+const span = compteur?.querySelector("span")
 
-let i = 0
+let i : number = 0
 
-const increment = (e) => [
+const increment = (e: Event) => [
   i++,
-  compteur.querySelector("span").innerText = i.toString()
+  
+ span ? span.innerText = i.toString() : null
 ]
 
-compteur.addEventListener("click", increment)
+compteur?.addEventListener("click", increment)
