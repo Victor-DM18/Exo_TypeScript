@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
+    "outDir": "test_TypeScript+JavaScript/dist",
     "target": "ES6",
     "noEmitOnError":true,
     "strict": true
