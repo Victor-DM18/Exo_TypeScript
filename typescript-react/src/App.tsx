@@ -1,7 +1,9 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { MessageInt } from '../components/Model';
 
 const App = () => {
-  const inputMessage : any = useRef<HTMLInputElement>(null)
+  const inputMessage: any = useRef<HTMLInputElement>(null)
+  const [messageData, setMeaasageData] = useState<MessageInt[]>([])
   
   const handleSubmit  =  (e : any) => {
     e.preventDefault()
