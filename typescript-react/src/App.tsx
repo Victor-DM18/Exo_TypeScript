@@ -12,7 +12,7 @@ const App = () => {
       const mess: MessageInt = {
         id: Math.round(Math.random() * Date.now()),
         message: inputMessage.current.value,
-        date : Date.now()
+        date : new Date(Date.now())
       }
       setMessageData((prevDate) => [...prevDate, mess])
     }
