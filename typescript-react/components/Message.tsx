@@ -9,7 +9,10 @@ type Props = {
 
 const Message = ({mess, messageData, setMessageData} : Props ) => {
   return (
-    <div>
+    <div className="message-container">
+      <h4>{mess.id}</h4>
+      <p>{mess.message}</p>
+      <h5>{mess.date.toString()}</h5>
     </div>
   );
 };
