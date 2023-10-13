@@ -3,10 +3,19 @@ import { MessageInt } from '../components/Model';
 
 const App = () => {
   const inputMessage: any = useRef<HTMLInputElement>(null)
-  const [messageData, setMeaasageData] = useState<MessageInt[]>([])
+  const [messageData, setMessageData] = useState<MessageInt[]>([])
   
   const handleSubmit  =  (e : any) => {
     e.preventDefault()
+
+    if (inputMessage) {
+      const mess: MessageInt = {
+        id: Math.round(Math.random() * Date.now()),
+        message: inputMessage.current.value,
+        date : Date.now()
+      }
+      setMessageData((prevDate) => [...prevDate, mess])
+    }
 
    inputMessage.current.value=""
   }
