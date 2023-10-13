@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
-import { MessageInt } from '../components/Model';
+import { MessageInt } from './components/Model';
+import Message from './components/Message';
 
 const App = () => {
   const inputMessage: any = useRef<HTMLInputElement>(null)
@@ -28,7 +29,12 @@ const App = () => {
         <input type="submit" value="Envoyer"></input>
       </form>
       <h1>Liste des messages</h1>
-      <div></div>
+      <div>{
+        messageData?.map((mess) => (
+          <Message mess={mess} messageData={messageData} setMessageData={
+          setMessageData} />
+          )) 
+      }</div>
     </div>
   );
 };
