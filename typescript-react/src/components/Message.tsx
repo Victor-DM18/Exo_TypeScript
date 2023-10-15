@@ -14,10 +14,13 @@ const Message = ({ mess, messageData, setMessageData }: Props) => {
   }
 
   return (
-    <div className="message-container">
-      <h4>{mess.id} </h4>
+    <div id="message-container">
+      <div id="deleteId">
+      <h5>id : {mess.id} </h5>
+      <span id="delete">&#10008;</span>
+      </div>
       <p>{mess.message}</p>
-      <h5>{dateFormater(mess.date) }</h5>
+      <h5>date : {dateFormater(mess.date)}</h5>
     </div>
   );
 };
