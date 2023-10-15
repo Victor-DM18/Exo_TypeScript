@@ -13,11 +13,15 @@ const Message = ({ mess, messageData, setMessageData }: Props) => {
     return new Date(date).toLocaleDateString("fr-FR", {day : "numeric", month: "long", year:"numeric"})
   }
 
+  const handleDelete = () => {
+    setMessageData(messageData.filter((e) => e.id !== mess.id))
+  }
+
   return (
     <div className="message-container">
       <div id="deleteId">
       <h5>id : {mess.id} </h5>
-      <span id="delete">&#10008;</span>
+      <span id="delete" onClick={handleDelete}>&#10008;</span>
       </div>
       <p>{mess.message}</p>
       <h6>date : {dateFormater(mess.date)}</h6>
