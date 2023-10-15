@@ -1,5 +1,5 @@
 export interface MessageInt {
   id: number,
   message: string,
-  date : Date
+  date : number
 }

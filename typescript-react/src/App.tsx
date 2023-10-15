@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { MessageInt } from './components/Model';
+import { MessageInt } from './model';
 import Message from './components/Message';
 
 const App = () => {
@@ -13,7 +13,7 @@ const App = () => {
       const mess: MessageInt = {
         id: Math.round(Math.random() * Date.now()),
         message: inputMessage.current.value,
-        date : new Date(Date.now())
+        date : Date.now()
       }
       setMessageData((prevDate) => [...prevDate, mess])
     }

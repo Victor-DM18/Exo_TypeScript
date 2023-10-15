@@ -1,4 +1,4 @@
-import { MessageInt } from "./Model";
+import { MessageInt } from "../model";
 import React from 'react';
 
 type Props = {
@@ -7,12 +7,17 @@ type Props = {
   setMessageData :React.Dispatch<React.SetStateAction<MessageInt[]>>
 }
 
-const Message = ({mess, messageData, setMessageData} : Props ) => {
+const Message = ({ mess, messageData, setMessageData }: Props) => {
+  
+  const dateFormater = (date : number) => {
+    return new Date(date).toLocaleDateString("fr-FR", {day : "numeric", month: "long", year:"numeric"})
+  }
+
   return (
     <div className="message-container">
-      <h4>{mess.id}</h4>
+      <h4>{mess.id} </h4>
       <p>{mess.message}</p>
-      <h5>{mess.date.toString()}</h5>
+      <h5>{dateFormater(mess.date) }</h5>
     </div>
   );
 };
